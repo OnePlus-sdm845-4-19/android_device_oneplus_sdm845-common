@@ -372,6 +372,9 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/oneplus \
     vendor/qcom/opensource/usb/etc
 
+QCOM_SOONG_NAMESPACE := \
+    $(LOCAL_PATH)/oss-hals
+
 # Telephony
 PRODUCT_PACKAGES += \
     ims-ext-common \
