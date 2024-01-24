@@ -1,0 +1,43 @@
+cc_library {
+    name: "libdisppower-oneplus_sdm845",
+    proprietary: true,
+    srcs: [
+        "disp-power/DisplayLowPower.cpp",
+        "disp-power/InteractionHandler.cpp",
+    ],
+    shared_libs: [
+        "libbase",
+        "libcutils",
+        "liblog",
+        "libperfmgr",
+        "libutils",
+    ],
+}
+
+cc_binary {
+    name: "android.hardware.power-service.oneplus_sdm845-libperfmgr",
+    relative_install_path: "hw",
+    init_rc: ["aidl/android.hardware.power-service.oneplus_sdm845-libperfmgr.rc"],
+    vintf_fragments: ["aidl/android.hardware.power-service.oneplus_sdm845.xml"],
+    vendor: true,
+    shared_libs: [
+        "android.hardware.power-V4-ndk",
+        "libbase",
+        "libcutils",
+        "liblog",
+        "libutils",
+        "libbinder_ndk",
+        "libdisppower-oneplus_sdm845",
+        "libperfmgr",
+        "libprocessgroup",
+        "pixel-power-ext-V1-ndk",
+        "libprotobuf-cpp-full",
+    ],
+    srcs: [
+        "aidl/service.cpp",
+        "aidl/Power.cpp",
+        "aidl/PowerExt.cpp",
+        "aidl/PowerHintSession.cpp",
+        "aidl/PowerSessionManager.cpp",
+    ],
+}
