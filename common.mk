@@ -30,7 +30,7 @@ PRODUCT_COPY_FILES += \
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage
+    $(LOCAL_PATH)/overlay-statix
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
@@ -273,10 +273,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default
 
-# LiveDisplay
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.1-service.oneplus_sdm845
-
 # Media
 PRODUCT_PACKAGES += \
     libavservices_minijail \
@@ -340,6 +336,10 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     oneplus-fwk
+
+# Platform
+PRODUCT_USES_QCOM_HARDWARE := true
+PRODUCT_BOARD_PLATFORM := sdm845
 
 # Power
 PRODUCT_PACKAGES += \
